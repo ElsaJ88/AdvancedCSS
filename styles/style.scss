@@ -1,0 +1,140 @@
+@import "global";
+@import "variables";
+@import "mixins";
+
+/* Testimonial */
+
+.testimonial {
+  width: 27rem;
+  height: auto;
+  margin: 20px auto 40px;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: $standard-box-shadow;
+
+  .testimonial__quote {
+    height: 350px;
+    padding: 60px $standard-padding 80px;
+    color: #656971;
+    background: #fff;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 150%;
+  }
+
+  .testimonial__pic {
+    @include paint-picture(9em, 9em, 50%);
+    position: absolute;
+    transform: translate(10em, 270px);
+  }
+
+  .testimonial__footer {
+    color: #fff;
+    background: $winc-academy-blue;
+    padding: 100px $standard-padding 50px;
+    font-size: 1rem;
+    h1 {
+      text-transform: uppercase;
+    }
+    a {
+      color: $primary-backgr-color;
+    }
+  }
+}
+
+/*Grid Container*/
+
+.grid--container {
+  display: grid;
+  grid-template-columns: auto;
+  margin: $standard-margin;
+  padding: $standard-padding auto;
+  position: relative;
+
+  &__item {
+    .button-container {
+      @include paint-picture(22em, 22em, 30%);
+      position: absolute;
+      margin: $standard-margin auto;
+      background: $winc-academy-blue;
+      display: flex;
+      button {
+        padding: 5px;
+        font-weight: bold;
+        background-color: white;
+        color: $winc-academy-blue;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+    .picture {
+      @include paint-picture(22rem, 22rem, 30%);
+      margin: $standard-margin auto;
+      position: relative;
+      img {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 0;
+        transition: opacity 350ms ease-in-out;
+      }
+    }
+  }
+}
+
+.social--media {
+  position: fixed;
+  right: -200px;
+  bottom: 0;
+  .social--media__laptop-code {
+    @include social-media-menu(#e17b77);
+    .fa-laptop-code {
+      @include social-media-icons();
+    }
+  }
+  .social--media__twitter {
+    @include social-media-menu(#00aced);
+    .fa-twitter {
+      @include social-media-icons();
+    }
+  }
+  .social--media__facebook {
+    @include social-media-menu(#3b5998);
+    .fa-facebook {
+      @include social-media-icons();
+    }
+  }
+  .social--media__linkedin {
+    @include social-media-menu(#007bb6);
+    .fa-linkedin {
+      @include social-media-icons();
+    }
+  }
+  .social--media__github {
+    @include social-media-menu(#333);
+    .fa-github {
+      @include social-media-icons();
+    }
+  }
+}
+/*  Media Queries */
+
+@media screen and (min-width: 768px) {
+  .grid--container {
+    grid-template-columns: repeat(2, auto);
+    .button-container,
+    .picture {
+      @include paint-picture(20rem, 20rem, 30%);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--container {
+    grid-template-columns: repeat(3, auto);
+    .button-container,
+    .picture {
+      @include paint-picture(17rem, 17rem, 30%);
+    }
+  }
+}

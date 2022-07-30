@@ -1,0 +1,44 @@
+@import "variables";
+
+@mixin paint-picture($width, $height, $border-radius) {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  border-radius: $border-radius;
+  border: 7px solid white;
+  box-shadow: $standard-box-shadow;
+
+  img {
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
+  }
+}
+
+@mixin social-media-menu($background) {
+  background: $background;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 250px;
+  height: 50px;
+  p {
+    color: white;
+    font: {
+      family: Arial, Helvetica, sans-serif;
+      size: 0.9em;
+    }
+  }
+  &:hover {
+    transform: translateX(-200px);
+    transition: transform 400ms ease-in-out;
+  }
+}
+
+@mixin social-media-icons {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 12px;
+}

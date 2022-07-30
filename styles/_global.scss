@@ -1,0 +1,16 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+body {
+  background: $primary-backgr-color;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+a {
+  color: white;
+}
